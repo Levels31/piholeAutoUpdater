@@ -181,7 +181,7 @@ Project Link: [[piAutoUpdater]](https://github.com/Levels31/piholeAutoUpdater)
 [issues-shield]: https://img.shields.io/github/issues/Levels31/piholeAutoUpdater.svg?style=for-the-badge
 [issues-url]: https://github.com/Levels31/piholeAutoUpdater
 [license-shield]: https://img.shields.io/github/license/Levels31/piholeAutoUpdater.svg?style=for-the-badge
-[license-url]: https://github.com/Levels31/piholeAutoUpdater/blob/master/LICENSE.txt
+[license-url]: https://github.com/Levels31/piholeAutoUpdater/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: 
 [product-screenshot]: images/screenshot.png
