@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-import datetime
+from datetime import datetime, timedelta
 import logging
 import subprocess
 from utils import sendmail
@@ -12,8 +12,8 @@ body = str()
 update_available = False
 
 # get current time
-today_date = datetime.datetime.now().strftime("%d.%m.%Y")
-today_date = datetime.datetime.strptime(today_date, "%d.%m.%Y")
+today_date = datetime.now().strftime("%d.%m.%Y")
+today_date = datetime.strptime(today_date, "%d.%m.%Y")
 
 # read log into memory
 with open ("run.log", "r") as log:
@@ -23,21 +23,17 @@ with open ("run.log", "r") as log:
 new_lines = []
 for line in lines:
     timestamp_str, rest_of_line = line.split(" ", 1)
-    timestamp_str = datetime.datetime.strptime(timestamp_str, "%d.%m.%Y")
+    timestamp_str = datetime.strptime(timestamp_str, "%d.%m.%Y")
     
-    if today_date - datetime.timedelta(days=30) < timestamp_str:
-        print(f"{today_date-datetime.timedelta(days=30)} is older than {timestamp_str}")
+    if today_date - timedelta(days=30) < timestamp_str:
         new_lines.append(line)
-
-    else:
-        print(f"{today_date-datetime.timedelta(days=30)} is younger {timestamp_str}")
 
 # write modified content back to file
 with open("run.log", "w") as file:
     file.writelines(new_lines)   
 
 logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%d.%m.%Y %H:%M:%S Uhr: ', filename='run.log', encoding='utf-8', level=logging.DEBUG)
-date = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+date = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
 logging.info("**********************")
 logging.info("Reading pihole version")
