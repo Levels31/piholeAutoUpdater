@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# v0.1.0
+
 from datetime import datetime, timedelta
 import logging
 import subprocess
